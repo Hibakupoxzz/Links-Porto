@@ -1,0 +1,18 @@
+---
+interface Props {
+  title: string;
+  icon: string;
+}
+
+const { title, icon } = Astro.props;
+---
+
+<div class="link-group">
+  <div class="category-header">
+    <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" set:html={icon} />
+    <h2 class="category-title">{title}</h2>
+  </div>
+  <div class="link-list">
+    <slot />
+  </div>
+</div>

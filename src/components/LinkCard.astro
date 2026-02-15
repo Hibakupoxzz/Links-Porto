@@ -1,0 +1,21 @@
+---
+interface Props {
+  name: string;
+  url: string;
+  icon: string;
+  description?: string;
+}
+
+const { name, url, icon, description } = Astro.props;
+---
+
+<a href={url} class="link-card">
+  <div class="link-content">
+    <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" set:html={icon} />
+    <div class="link-text">
+      <span class="link-name">{name}</span>
+      {description && <span class="link-description">{description}</span>}
+    </div>
+  </div>
+  <span class="link-arrow">→</span>
+</a>
